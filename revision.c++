@@ -1,35 +1,32 @@
 #include<iostream>
 using namespace std;
-bool find(int n , int array[] , int key){
+void printarr(int array[] , int n){
     for (int i = 0; i < n; i++)
     {
-        if (array[i]==key)
-        {
-            return 1;
-        }
+        cout<<array[i]<<endl;
     }
-    return 0;
+    
+}
+void swapalternate(int array[] , int n){
+    for (int i = 0; i < n; i+=2)
+    {
+        if (i+1<n)
+        {
+            swap(array[i] , array[i+1]);
+        }
+        
+    }
+    
 }
 int main(){
-    cout<<" How many number you wnat to give:- ";
     int n;
     cin>>n;
-    cout<<" Type "<< n <<" numbers:- "<<endl; 
-    int array[500];
+    int array[100];
     for (int i = 0; i < n; i++)
     {
         cin>>array[i];
     }
-    cout<< "Enter a key you want to find :- ";
-    int key;
-    cin>>key;
-    int found;
-    found = find(n,array,key);
-    if (found)
-    {
-        cout<<" Your key is Found:- "<<key<<endl;
-    } else {
-        cout<<" Your key is not Found:- "<<key<<endl;
-    }
+    swapalternate(array,n);
+    printarr(array,n);
     return 0;
 }
