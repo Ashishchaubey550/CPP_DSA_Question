@@ -1,0 +1,1 @@
+cout<<left(array,6,key)<<endl;
